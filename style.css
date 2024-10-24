@@ -1,0 +1,218 @@
+body{
+    background-color: black;
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+@keyframes moving{
+    50% {
+        left: 30%;
+        top: 10%;
+        scale: 1.11;
+      }
+}
+
+@keyframes moving2{
+    50% {
+        left: 60%;
+        top: 60%;
+        scale: 1.15;
+      }
+}
+
+#circle1, #circle2{
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    position: absolute;
+}
+
+#circle1{
+    background-color: tomato;
+    animation: moving 10s infinite;
+    box-shadow: 0px 0px 40px rgb(247, 112, 88);
+    top: 20%;
+    left: 20%;
+}
+
+#circle2{
+    animation: moving2 9s infinite;
+    background-color:violet;
+    box-shadow: 0px 0px 40px rgb(247, 159, 247);
+    top: 60%;
+    left: 66%;
+}
+
+#wrapper{
+    z-index: 1;
+    background-size: 120%;
+    background-color: rgba(115, 115, 115, 0.2);
+    border-radius: 3%;
+    box-shadow: 0px 0px 10px rgb(106, 106, 106);
+    margin-top: 90px;
+    padding: 1%;
+    height: 600px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+#share-img{
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 20px  whitesmoke;
+}
+
+#desc-main{
+    margin-bottom: 50px;
+    color: whitesmoke;
+    opacity: 0.7;
+}
+
+button{
+    color: white;
+    height: 50px;
+    width: 170px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: 1px solid #ffffff;
+    background-color: transparent;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+}
+
+button:hover{
+    background-color: #3498db;
+    transition-delay: 0.2s;
+}
+
+#profile-follow{
+    margin-right: 20px;
+}
+
+#profile-me{
+    margin-left: 20px;
+}
+
+#header-wiht-cross{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#cross{
+    position: relative;
+    right: 5%;
+}
+
+#share-profile{
+    position: absolute;
+    top: 30%;
+    z-index: 1;
+    height: 200px;
+    width: 500px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 3%;
+    box-shadow: 0px 0px 10px rgb(106, 106, 106);
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    padding: 3%;
+    transition: all 0.5s linear;
+}
+
+#text-main-2{
+    /* padding: 1%; */
+    height: auto;
+    width: 500px;
+    text-align: start;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+hr{
+    width: 500px;
+    color: whitesmoke;
+    opacity: 0.5;
+}
+
+#text-desc{
+    padding: 1%;
+    height: auto;
+    width: 500px;
+    text-align: start;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#icons{
+    /* color: white; */
+    position:  relative;
+    padding: 1%;
+    height: 200px;
+    width: 200px;
+    display: flex;
+}
+
+#facebook, #instagram, #twitter{
+    margin-right: 30px;
+}
+
+#facebook{
+    color: blue;
+}
+
+#instagram{
+    color: red;
+}
+
+#twitter{
+    color: lightblue
+}
+
+#telegram{
+    color: aqua;
+}
+
+#instagram, #twitter, #telegram{
+    margin-left: 20px;
+}
+
+.hidden{
+    visibility: hidden;
+}
+
+
+/* Initially hide the share-profile div with opacity and a slight translation */
+#share-profile {
+    opacity: 0;
+    transform: translateY(-20px); /* Slide it up when hidden */
+    transition: opacity 0.7s ease, transform 0.7s ease; /* Smooth animation */
+}
+
+/* When visible, make the div appear */
+#share-profile.visible {
+    opacity: 1;
+    transform: translateY(0); /* Slide it to its normal position */
+}
+
+/* Hidden class just removes visibility */
+.hidden {
+    opacity: 0;
+    transform: translateY(-20px); /* Same transform to make it consistent */
+    pointer-events: none; /* Disable interaction while hidden */
+}
